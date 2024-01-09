@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat&family=Italianno&family=Pacifico&family=Young+Serif&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Forside</a></li>
+                <li><a href="spil.html">Spil</a></li>
+                <li><a href="grafik.html">Grafik</a></li>
+                <li><a href="assets.html">Assets</a></li>
+                <li><a href="teknik.html">Teknik</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="screen">
+            <div id="game">
+                <div id="game_background"></div>
+                <div id="game_elements">
+                    <div id="flue_container1" class="pos">
+                        <div id="flue_sprite1" class=""></div>
+                    </div>
+                    <div id="bi_container1" class="pos2">
+                        <div id="bi_sprite1" class=""></div>
+                    </div>
+                    <div id="frog_container" class="pos2">
+                        <div id="frog_sprite" class=""></div>
+                    </div>
+                </div>
+                <div id="game_foreground"></div>
+                <div id="game_ui">
+                    <h1 id="point">Point: 0</h1>
+                    <div id="score_board"></div>
+                    <div id="life_board">
+                        <div id="heart"></div>
+                        <div id="liv"></div>
+                    </div>
+                    <div id="time_board">
+                        <div id="time_container">
+                            <div id="time_sprite"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="start" class="">
+                <div id="start_txt">Help Flutter the Frog catch flies and avoid the bees</div>
+                <div id="start_knap"></div>
+            </div>
+            <div id="game_over" class="">
+                <div id="game_over_txt">GAMEOVER</div>
+                <div id="game_over_points">You got ?? points</div>
+                <div id="genstart1"></div>
+            </div>
+            <div id="level_complete" class="">
+                <div id="level_complete_txt">TILLYKKE DU VANDT!</div>
+                <div id="level_complete_points">You got ?? points</div>
+                <div id="genstart2">Help Flutter again</div>
+            </div>
+        </div>
+    </main>
+    <footer>Lavet af: Melina</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

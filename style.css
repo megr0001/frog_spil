@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+#game_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-image: url(elementer/background-05.svg);
+}
+
+#start {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(elementer/startscreen-09.svg);
+  z-index: 1000;
+}
+
+#game_over {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(elementer/gameover_screen-09.svg);
+  z-index: 1000;
+}
+
+#level_complete {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(elementer/level_complete-09.svg);
+  z-index: 1000;
+}
+
+#level_complete_txt {
+  position: absolute;
+  top: 32%;
+  left: 40%;
+  font-size: 5cqw;
+  color: rgb(13, 249, 13);
+}
+
+#game_over_txt {
+  position: absolute;
+  top: 32%;
+  left: 40%;
+  font-size: 5cqw;
+  color: red;
+}
+#level_complete_points,
+#game_over_points,
+#start_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2.5cqw;
+  font-family: "Caveat", cursive;
+  color: pink;
+  text-shadow: black;
+}
+#genstart1,
+#gameover1,
+#start_knap {
+  position: absolute;
+  bottom: 20%;
+  right: 25%;
+  background-image: url(elementer/play-11.svg);
+  aspect-ratio: 160/115;
+  width: 9%;
+  cursor: pointer;
+  animation-name: pulse_kf;
+  animation-duration: 0.7s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes pulse_kf {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.2;
+  }
+  /* de her ting ovenover, gør så startknappen pulserer og ser mega fed ud og der er en musehånd når man er over den */
+}
+.hide {
+  display: none;
+}
+
+/******************   game_elements  ************************/
+#game_elements {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* det her har jeg sat ind, det er hvor fluen kommer ind og hvor stor den er og hvor på skærmen den er */
+#flue_container1 {
+  width: 6.5%;
+  aspect-ratio: 135/115;
+  position: absolute;
+  top: 30%;
+  left: 0%;
+}
+#flue_sprite1 {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(elementer/flue1.svg);
+  cursor: pointer;
+}
+
+#bi_container1 {
+  width: 7%;
+  aspect-ratio: 140/115;
+  position: absolute;
+  top: 40%;
+  left: 0%;
+}
+#bi_sprite1 {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(elementer/bi-06.svg);
+  cursor: pointer;
+}
+#frog_container {
+  width: 11%;
+  aspect-ratio: 140/170;
+  position: absolute;
+  top: 71%;
+  left: 12%;
+}
+#frog_sprite {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(elementer/pink_frog.svg);
+  cursor: pointer;
+}
+
+/******************   game_foreground  ************************/
+#game_foreground {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-image: url(elementer/foreground-08.svg);
+  pointer-events: none;
+}
+
+/******************   game_ui  ************************/
+#game_ui {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* her skal man sætte pointer-events: none; for at man kan få fat i de foreliggende elementer i inspicer på hjemmesiden */
+  pointer-events: none;
+}
+
+#score_board {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  font-size: 3cqw;
+  font-family: monospace;
+}
+
+#life_board {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  width: 20%;
+  height: 20%;
+  display: flex;
+  gap: 2%;
+}
+#heart {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 16%;
+  aspect-ratio: 645/585;
+  background-image: url(elementer/heart.svg);
+  background-size: cover;
+}
+
+#liv {
+  position: absolute;
+  top: 14%;
+  left: 21%;
+  font-size: 3cqw;
+  font-family: monospace;
+}
+
+#time_container {
+  position: absolute;
+  width: 3%;
+  height: 30%;
+  top: 5%;
+  left: 95%;
+  border: 0.2vw solid white;
+}
+
+#time_sprite {
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 100%;
+  background-color: lime;
+}
+
+.time {
+  animation-name: time_kf;
+  animation-duration: 20s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes time_kf {
+  0% {
+    transform: scaleY(1);
+    background-color: lime;
+  }
+
+  50% {
+    transform: scaleY(0.5);
+    background-color: yellow;
+  }
+
+  100% {
+    transform: scaleY(0);
+    background-color: red;
+  }
+}
+/******************   positioner  ************************/
+.pos1 {
+  top: 20%;
+}
+.pos2 {
+  top: 40%;
+}
+.pos3 {
+  top: 60%;
+}
+.pos4 {
+  top: 75%;
+}
+
+/******************   delays  ************************/
+.delay1 {
+  animation-delay: 0s;
+}
+
+.delay2 {
+  animation-delay: 0.3s;
+}
+
+.delay3 {
+  animation-delay: 0.6s;
+}
+
+.delay4 {
+  animation-delay: 0.9s;
+}
+
+/******************   animationer  ************************/
+.forsvind {
+  animation-name: forsvind_kf;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes forsvind_kf {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.drej {
+  animation-name: drej_kf;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes drej_kf {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.frys {
+  animation-play-state: paused;
+}
+
+.flyv {
+  animation-name: flyv_kf;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes flyv_kf {
+  0% {
+    translate: -100% 0;
+  }
+  100% {
+    translate: 1500% 0;
+  }
+}
+
+.fald {
+  animation-name: fald_kf;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes fald_kf {
+  0% {
+  }
+
+  100% {
+    transform: translateY(121.25%);
+  }
+}
+
+.hop {
+  animation-name: hop_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: 2;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes hop_kf {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
